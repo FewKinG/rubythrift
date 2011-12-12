@@ -1,0 +1,24 @@
+have_func: checking for strlcpy() in string.h... -------------------- yes
+
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-1.9.2-p290/include/ruby-1.9.1/x86_64-linux -I/usr/local/rvm/rubies/ruby-1.9.2-p290/include/ruby-1.9.1/ruby/backward -I/usr/local/rvm/rubies/ruby-1.9.2-p290/include/ruby-1.9.1 -I.    -g -O2 -Wall -Werror conftest.c  -L. -L/usr/local/rvm/rubies/ruby-1.9.2-p290/lib -Wl,-R/usr/local/rvm/rubies/ruby-1.9.2-p290/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p290/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p290/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"gcc -o conftest -I/usr/local/rvm/rubies/ruby-1.9.2-p290/include/ruby-1.9.1/x86_64-linux -I/usr/local/rvm/rubies/ruby-1.9.2-p290/include/ruby-1.9.1/ruby/backward -I/usr/local/rvm/rubies/ruby-1.9.2-p290/include/ruby-1.9.1 -I.    -g -O2 -Wall -Werror conftest.c  -L. -L/usr/local/rvm/rubies/ruby-1.9.2-p290/lib -Wl,-R/usr/local/rvm/rubies/ruby-1.9.2-p290/lib -L.  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/usr/local/rvm/rubies/ruby-1.9.2-p290/lib -L/usr/local/rvm/rubies/ruby-1.9.2-p290/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <string.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { void ((*volatile p)()); p = (void ((*)()))strlcpy; return 0; }
+/* end */
+
+--------------------
+
